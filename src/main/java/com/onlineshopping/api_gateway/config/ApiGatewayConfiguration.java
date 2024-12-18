@@ -11,21 +11,12 @@ public class ApiGatewayConfiguration {
 
     private final AuthenticationFilter authenticationFilter;
 
-    // Inject the AuthenticationFilter into the configuration
     public ApiGatewayConfiguration(AuthenticationFilter authenticationFilter) {
         this.authenticationFilter = authenticationFilter;
     }
 
     @Bean
     public RouteLocator gatewayRouter(RouteLocatorBuilder builder) {
-//        return  builder.routes().build();
-//         builder.routes().
-//                route(p->p.path("/product-service/**")
-//                        .filters(f ->
-//                                f.filter(authenticationFilter.apply(new AuthenticationFilter.Config())))
-//                        .uri("lb://PRODUCT-SERVICE")
-//
-//                ).build();
 
         return builder.routes()
                 .route("product-service",
