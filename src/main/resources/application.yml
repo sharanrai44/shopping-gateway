@@ -30,3 +30,17 @@ logging:
   level:
     org.springframework.cloud.gateway: DEBUG
     reactor.netty.http.client: DEBUG
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    urls:
+      - name: Product Service
+        url: /products/v3/api-docs
+      - name: Auth Service
+        url: /auth/v3/api-docs
+  default-group-name: Gateway
